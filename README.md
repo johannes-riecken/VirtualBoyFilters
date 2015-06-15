@@ -4,13 +4,14 @@ Filters to beautify videos or screenshots of monochrome Virtual Boy games
 Virtual Boy videos look better with colors! In the following I describe how to convert a video of a Virtual Boy game using the command line tools FFmpeg and ImageMagick. 
 
 ## Requirements
-[FFmpeg](www.ffmpeg.org) for converting the video into pictures of single frames and converting the modified frames back to a video.
-[ImageMagick](www.imagemagick.org) for applying a filter to every video frame.
+- [FFmpeg](www.ffmpeg.org) for converting the video into pictures of single frames and converting the modified frames back to a video.
+- [ImageMagick](www.imagemagick.org) for applying a filter to every video frame.
 A file colors.png (sample in this repository), which contains the colors that will be used for translating grayscale values to colors. 
 
 ## Steps
-Install FFmpeg and ImageMagick and add both to PATH. 
-Download colors.png to the same folder as the video (referred to as `video.mp4` in commands) and open a command line in that folder.
+- Install FFmpeg and ImageMagick and add both to PATH. 
+- Download colors.png to the same folder as the video (referred to as `video.mp4` in commands) and open a command line in that folder.
+
 Depending on your command line interpreter, you will have to escape parentheses with a backslash. 
 If necessary shorten the video's duration (here the cut begins after 1 minute 30 seconds and runs for 10 seconds.
 ```
@@ -43,6 +44,7 @@ ffmpeg -i out/%04d.png -i sound.mp3 -o out.mp4
 Applying the filter can be slow. Ways to speed it up:
 - Leave out the "-blur 12x12" part or use smaller blur parameters. 
 - Only have a few frame images in the frames/ folder at a time. I tried it with 300 frames without issues.
+
 Conversion needs much disk space, because pictures of every video frame need to be written to the hard drive first. 
 
 ## References
