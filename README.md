@@ -33,7 +33,7 @@ convert frames/*.png null: ( -clone 0--1 -blur 12x12 -append colors.png -clut -c
 ```
 Apply filter to frames. (Alternative 2 if Alternative 1 is too slow; for Windows Command Line).
 ```
-for %f in frames/*.png do convert %f ( +clone -blur 12x12 colors.png -clut ) -compose multiply -composite out/%f
+for %f in (frames/*.png) do convert %f ( +clone -blur 12x12 colors.png -clut ) -compose multiply -composite out/%f
 ```
 Convert the modified frames back to a video with sound.
 ```
